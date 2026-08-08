@@ -55,7 +55,7 @@ export function Contato() {
   }
 
   return (
-    <section id="contato" className="section-space bg-navy-50/60">
+    <section id="contato" className="section-space bg-white">
       <Container>
         <SectionHeading
           eyebrow="Contato"
@@ -63,7 +63,7 @@ export function Contato() {
           description="Preencha o formulário ou fale diretamente com um representante. Respondemos rápido e com orçamento sob medida."
         />
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-5">
+        <div className="mt-8 grid gap-8 lg:grid-cols-5">
           <Reveal className="space-y-4 lg:col-span-2">
             {contactChannels.map((channel) => (
               <a

@@ -60,14 +60,14 @@ export function Processo() {
           </Reveal>
         </div>
 
-        <div className="mt-16 rounded-2xl border border-navy-700/70 bg-navy-900/40 p-8 text-center backdrop-blur-sm sm:p-10">
-          <p className="text-lg font-semibold text-white sm:text-xl">
+        <div className="mt-10 rounded-2xl border border-navy-700/80 bg-navy-900/60 p-6 text-center backdrop-blur-md sm:p-8">
+          <p className="text-base font-semibold text-white sm:text-lg">
             Funcionamos 24 horas, de segunda a segunda-feira. Está tudo pronto
             para agendar sua primeira entrega.
           </p>
           <a
             href="#contato"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-700 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-800 focus-ring"
+            className="mt-5 inline-flex items-center justify-center rounded-full bg-brand-700 px-7 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg shadow-brand-700/30 transition-all hover:bg-brand-800 focus-ring sm:text-sm"
           >
             Agendar coleta agora
           </a>

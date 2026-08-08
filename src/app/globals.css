@@ -55,7 +55,7 @@
 }
 
 @utility section-space {
-  @apply py-20 sm:py-24 lg:py-28;
+  @apply py-10 sm:py-14 lg:py-16;
 }
 
 @utility container-page {
@@ -64,4 +64,12 @@
 
 @utility focus-ring {
   @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700;
+}
+
+@utility glass-card {
+  @apply bg-white/90 backdrop-blur-md border border-slate-100 shadow-xl shadow-slate-900/5;
+}
+
+@utility glass-card-dark {
+  @apply bg-navy-900/80 backdrop-blur-md border border-navy-700/80 shadow-2xl shadow-black/20;
 }
