@@ -1,0 +1,76 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { faqs } from "@/lib/content";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/motion/Reveal";
+
+export function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <section id="faq" className="section-space bg-navy-50/60">
+      <Container className="max-w-4xl">
+        <SectionHeading
+          eyebrow="FAQ"
+          title="Perguntas frequentes"
+          description="Tudo o que você precisa saber antes de contratar nossos serviços."
+        />
+
+        <Reveal className="mt-12 space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={faq.question}
+                className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm"
+              >
+                <h3>
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left focus-ring"
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-panel-${index}`}
+                    id={`faq-trigger-${index}`}
+                  >
+                    <span className="text-base font-semibold text-slate-900">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`size-5 shrink-0 text-brand-600 transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                      aria-hidden
+                    />
+                  </button>
+                </h3>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      id={`faq-panel-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-trigger-${index}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <p className="px-6 pb-6 text-sm leading-relaxed text-slate-600">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </Reveal>
+      </Container>
+    </section>
+  );
+}
