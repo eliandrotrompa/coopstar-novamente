@@ -8,26 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 export function Sobre() {
   return (
     <section id="sobre" className="section-space bg-white">
-      <Container className="space-y-12" suppressHydrationWarning>
-        <Reveal className="relative">
-          <div className="relative overflow-hidden rounded-2xl shadow-xl" suppressHydrationWarning>
-            <div className="relative w-full aspect-[927/224]">
-              <Image
-                src="/imagens/sobre.jpg"
-                alt="Soluções para pequena, média e grandes empresas — Moto Frete Coopstar Express"
-                fill
-                priority
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1100px"
-                className="object-cover object-center"
-              />
-            </div>
-          </div>
-          <div className="absolute -bottom-5 -right-3 rounded-2xl bg-brand-700 px-6 py-5 text-white shadow-lg" suppressHydrationWarning>
-            <p className="text-2xl font-extrabold">9+ anos</p>
-            <p className="text-sm text-brand-100">de experiência no mercado</p>
-          </div>
-        </Reveal>
-
+      <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <Reveal>
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-700">
@@ -70,6 +51,24 @@ export function Sobre() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal className="relative mt-10 lg:mt-0">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl" suppressHydrationWarning>
+            <div className="relative w-full aspect-[4/3] sm:aspect-[4/5] lg:aspect-square">
+              <Image
+                src="/imagens/sobre-nova.jpg"
+                alt="Equipe Coopstar Express"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+          <div className="absolute -bottom-5 -left-5 sm:-left-8 rounded-2xl bg-brand-700 px-6 py-5 text-white shadow-lg" suppressHydrationWarning>
+            <p className="text-2xl font-extrabold">9+ anos</p>
+            <p className="text-sm text-brand-100">de experiência no mercado</p>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

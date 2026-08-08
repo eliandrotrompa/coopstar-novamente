@@ -72,14 +72,14 @@ export function Hero() {
 
       <Container className="pb-0">
         <motion.div {...rise(0.55)} className="relative w-full overflow-hidden rounded-2xl" suppressHydrationWarning>
-          <div className="relative w-full aspect-[927/224]">
+          <div className="relative w-full aspect-[16/9]">
             <Image
-              src="/imagens/hero.jpg"
+              src="/imagens/hero-loira6.jpg"
               alt="Moto frete da Coopstar Express em São Paulo — segurança, rapidez e eficiência"
               fill
               priority
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-              className="object-cover object-center"
+              className="object-cover object-top sm:object-center"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-950/40" />
