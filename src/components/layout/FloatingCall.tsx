@@ -26,6 +26,7 @@ export function FloatingCall() {
           transition={{ duration: 0.25 }}
           className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-3.5 font-semibold text-white shadow-xl shadow-brand-700/30 transition-colors hover:bg-brand-800 focus-ring"
           aria-label="Ligar para a Coopstar Express"
+          suppressHydrationWarning
         >
           <Phone className="size-5" aria-hidden />
           <span className="hidden sm:inline">Fale conosco</span>

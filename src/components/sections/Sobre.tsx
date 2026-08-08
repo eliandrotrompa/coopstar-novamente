@@ -8,9 +8,9 @@ import { Reveal } from "@/components/motion/Reveal";
 export function Sobre() {
   return (
     <section id="sobre" className="section-space bg-white">
-      <Container className="space-y-12">
+      <Container className="space-y-12" suppressHydrationWarning>
         <Reveal className="relative">
-          <div className="relative overflow-hidden rounded-2xl shadow-xl">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl" suppressHydrationWarning>
             <div className="relative w-full aspect-[927/224]">
               <Image
                 src="/imagens/sobre.jpg"
@@ -22,7 +22,7 @@ export function Sobre() {
               />
             </div>
           </div>
-          <div className="absolute -bottom-5 -right-3 rounded-2xl bg-brand-700 px-6 py-5 text-white shadow-lg">
+          <div className="absolute -bottom-5 -right-3 rounded-2xl bg-brand-700 px-6 py-5 text-white shadow-lg" suppressHydrationWarning>
             <p className="text-2xl font-extrabold">9+ anos</p>
             <p className="text-sm text-brand-100">de experiência no mercado</p>
           </div>

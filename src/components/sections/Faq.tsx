@@ -59,6 +59,7 @@ export function Faq() {
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                      suppressHydrationWarning
                     >
                       <p className="px-6 pb-6 text-sm leading-relaxed text-slate-600">
                         {faq.answer}

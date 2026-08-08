@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section id="inicio" className="relative isolate bg-navy-950">
       <Container className="flex min-h-[92vh] flex-col justify-center py-28">
-        <motion.div {...rise(0)} className="max-w-2xl">
+        <motion.div {...rise(0)} className="max-w-2xl" suppressHydrationWarning>
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
             <span className="size-2 rounded-full bg-brand-500" aria-hidden />
             Moto Frete · 24 horas
@@ -31,6 +31,7 @@ export function Hero() {
         <motion.h1
           {...rise(0.1)}
           className="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+          suppressHydrationWarning
         >
           Entregas e coletas na velocidade que{" "}
           <span className="text-brand-400">sua empresa precisa</span>
@@ -39,13 +40,14 @@ export function Hero() {
         <motion.p
           {...rise(0.2)}
           className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300"
+          suppressHydrationWarning
         >
           Moto frete e delivery em São Paulo capital e Grande SP. Documentos e
           pequenos volumes entregues com agilidade, segurança e horário
           marcado — sem burocracia.
         </motion.p>
 
-        <motion.div {...rise(0.3)} className="mt-10 flex flex-wrap items-center gap-4">
+        <motion.div {...rise(0.3)} className="mt-10 flex flex-wrap items-center gap-4" suppressHydrationWarning>
           <Button href="#contato" withArrow>
             Solicitar orçamento
           </Button>
@@ -57,6 +59,7 @@ export function Hero() {
         <motion.dl
           {...rise(0.45)}
           className="mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-3"
+          suppressHydrationWarning
         >
           {heroStats.map((stat) => (
             <div key={stat.label} className="border-l-2 border-brand-600 pl-4">
@@ -68,7 +71,7 @@ export function Hero() {
       </Container>
 
       <Container className="pb-0">
-        <motion.div {...rise(0.55)} className="relative w-full overflow-hidden rounded-2xl">
+        <motion.div {...rise(0.55)} className="relative w-full overflow-hidden rounded-2xl" suppressHydrationWarning>
           <div className="relative w-full aspect-[927/224]">
             <Image
               src="/imagens/hero.jpg"

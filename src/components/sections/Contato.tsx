@@ -33,22 +33,15 @@ export function Contato() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contato", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nome: data.get("nome"),
-          email: data.get("email"),
-          telefone: data.get("telefone"),
-          assunto: data.get("assunto"),
-          mensagem: data.get("mensagem"),
-        }),
+        body: data,
       });
 
-      const result = (await response.json()) as { ok: boolean; error?: string };
+      const result = (await response.json()) as { success: boolean };
 
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error ?? "Não foi possível enviar a mensagem.");
+      if (!response.ok || !result.success) {
+        throw new Error("Não foi possível enviar a mensagem.");
       }
 
       setStatus("success");
@@ -115,12 +108,14 @@ export function Contato() {
               className="rounded-2xl border border-slate-100 bg-white p-6 shadow-xl sm:p-8"
               noValidate={false}
             >
+              <input type="hidden" name="access_key" value="w3f_e3da6e70349096e5fbff2262cc1b389d1dec61e8c11fd63f" />
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-1">
                   <label htmlFor="nome" className="mb-1.5 block text-sm font-medium text-slate-700">
                     Nome *
                   </label>
-                  <input id="nome" name="nome" type="text" required autoComplete="name" className={inputClasses} placeholder="Seu nome" />
+                  <input id="nome" name="from_name" type="text" required autoComplete="name" className={inputClasses} placeholder="Seu nome" />
                 </div>
 
                 <div className="sm:col-span-1">
@@ -134,21 +129,21 @@ export function Contato() {
                   <label htmlFor="telefone" className="mb-1.5 block text-sm font-medium text-slate-700">
                     Telefone
                   </label>
-                  <input id="telefone" name="telefone" type="tel" autoComplete="tel" className={inputClasses} placeholder="(11) 99999-9999" />
+                  <input id="telefone" name="phone" type="tel" autoComplete="tel" className={inputClasses} placeholder="(11) 99999-9999" />
                 </div>
 
                 <div className="sm:col-span-1">
                   <label htmlFor="assunto" className="mb-1.5 block text-sm font-medium text-slate-700">
                     Assunto *
                   </label>
-                  <input id="assunto" name="assunto" type="text" required className={inputClasses} placeholder="Ex.: Moto Frete" />
+                  <input id="assunto" name="subject" type="text" required className={inputClasses} placeholder="Ex.: Moto Frete" />
                 </div>
 
                 <div className="sm:col-span-2">
                   <label htmlFor="mensagem" className="mb-1.5 block text-sm font-medium text-slate-700">
                     Mensagem *
                   </label>
-                  <textarea id="mensagem" name="mensagem" required rows={5} className={cn(inputClasses, "resize-y")} placeholder="Descreva coleta, destino e urgência." />
+                  <textarea id="mensagem" name="message" required rows={5} className={cn(inputClasses, "resize-y")} placeholder="Descreva coleta, destino e urgência." />
                 </div>
               </div>
 
