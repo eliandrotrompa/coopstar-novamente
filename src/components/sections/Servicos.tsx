@@ -50,12 +50,15 @@ export function Servicos() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute top-3 left-3 rounded-lg bg-navy-950/85 backdrop-blur-md px-3 py-1 text-xs font-bold text-white shadow-md">
-                  Coopstar Express
+                <div className="absolute top-3 left-3 rounded-lg bg-navy-950/90 backdrop-blur-md px-3 py-1 text-xs font-bold text-white shadow-md">
+                  {service.badge}
                 </div>
               </div>
 
-              <h3 className="text-xl font-extrabold text-slate-900">{service.title}</h3>
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-600">
+                {service.subtitle}
+              </span>
+              <h3 className="mt-1 text-xl font-extrabold text-slate-900">{service.title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
                 {service.description}
               </p>

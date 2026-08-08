@@ -19,11 +19,21 @@ export interface NavItem {
   id: string;
 }
 
+export interface Testimonial {
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  rating: number;
+}
+
 export interface Service {
   title: string;
+  subtitle: string;
   description: string;
   features: string[];
   icon: LucideIcon;
+  badge: string;
 }
 
 export interface Differentiator {
@@ -55,37 +65,46 @@ export const navItems: NavItem[] = [
 
 export const services: Service[] = [
   {
-    title: "Moto Frete",
+    title: "Moto Frete Avulso & Ponto a Ponto",
+    subtitle: "Agilidade imediata para urgências",
     description:
-      "Entregas rápidas de documentos e pequenos volumes de um ponto a outro da cidade. O combo perfeito para quem precisa de agilidade.",
+      "Serviço de entrega expressa rápida de documentos, contratos e pequenos volumes entre empresas, cartórios, bancos e escritórios na grande São Paulo.",
     features: [
-      "Serviços bancários, cartórios e despachos",
-      "Retiradas e entregas em aeroportos",
-      "Acompanhamento e compromisso com horários",
+      "Serviços bancários, cartórios e despachos de documentos",
+      "Coleta rápida e entregas urgentes ponto a ponto",
+      "Retiradas e entregas prioritárias em aeroportos e terminais",
+      "Confirmação de protocolo e rastreamento da entrega",
     ],
     icon: Bike,
+    badge: "Mais Solicitado",
   },
   {
-    title: "Delivery Contínuo",
+    title: "Delivery Contínuo & Frota Dedicada",
+    subtitle: "Logística contínua sob medida para sua empresa",
     description:
-      "Se sua empresa tem grande volume de documentos ou encomendas leves, implantamos um serviço de delivery com o melhor custo-benefício.",
+      "Contrate um motofretista ou frota exclusiva para a rotina diária da sua empresa. Reduza custos operacionais com rotas otimizadas e entregas garantidas.",
     features: [
-      "Farmácias, pizzarias, restaurantes e autopeças",
-      "Rotas planejadas para reduzir custos",
-      "Frota dedicada ao seu negócio",
+      "Atendimento para farmácias, e-commerce, escritórios e autopeças",
+      "Contrato mensal com custo fixo previsível e vantajoso",
+      "Motofretistas uniformizados e treinados com frota própria",
+      "Substituição imediata em caso de imprevistos na rota",
     ],
     icon: PackageCheck,
+    badge: "Melhor Custo-Benefício",
   },
   {
-    title: "Fora da Capital",
+    title: "Entregas Fora da Capital & Grande SP",
+    subtitle: "Cobertura regional expandida",
     description:
-      "Levamos suas entregas além da capital com orçamento sob medida. Atendemos São Paulo (capital) e Grande São Paulo com agilidade.",
+      "Levamos suas encomendas além dos limites da capital com transporte rápido e seguro para municípios da Grande São Paulo e regiões metropolitanas.",
     features: [
-      "Entregas na Grande São Paulo",
-      "Orçamentos sob medida",
-      "Suporte para combinar coleta e destino",
+      "Atendimento completo na Grande São Paulo e região",
+      "Orçamentos sob medida adaptados ao seu volume",
+      "Agendamento flexível com horários marcados",
+      "Acompanhamento personalizado de coleta ao destino final",
     ],
     icon: Route,
+    badge: "Atendimento Regional",
   },
 ];
 
@@ -113,6 +132,33 @@ export const differentiators: Differentiator[] = [
     description:
       "Experiência consolidada que transforma a Coopstar Express em referência no seguimento.",
     icon: Award,
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Ricardo Mendonça",
+    role: "Gerente de Operações",
+    company: "Advocacia Mendonça & Associados",
+    content:
+      "A Coopstar Express atende nosso escritório diariamente na entrega de prazos e cartórios. O atendimento 24 horas e a pontualidade são impecáveis. Recomendo de olhos fechados!",
+    rating: 5,
+  },
+  {
+    name: "Camila Silveira",
+    role: "Diretora Administrativa",
+    company: "PharmaMed Distribuidora",
+    content:
+      "Implantamos o delivery contínuo com motofretistas dedicados da Coopstar e nossa taxa de satisfação de entregas subiu para 100%. Reduzimos nossos custos logísticos substancialmente.",
+    rating: 5,
+  },
+  {
+    name: "Marcos Vinícius",
+    role: "Coordenador de Logística",
+    company: "TechParts Autopeças SP",
+    content:
+      "Precisávamos de entregas urgentes na Grande SP e a Coopstar foi a única empresa que atendeu com rapidez, transparência e valor justo. Excelente trabalho da equipe!",
+    rating: 5,
   },
 ];
 
