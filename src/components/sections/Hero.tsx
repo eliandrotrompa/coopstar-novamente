@@ -88,7 +88,7 @@ export function Hero() {
               <div className="relative overflow-hidden rounded-3xl border border-navy-700/60 bg-navy-900/40 p-2 shadow-2xl backdrop-blur-sm">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl sm:aspect-[4/5]">
                   <Image
-                    src="/imagens/hero-loira6.jpg"
+                    src="/imagens/hero-loira6.png"
                     alt="Moto frete da Coopstar Express em São Paulo — segurança, rapidez e eficiência"
                     fill
                     priority

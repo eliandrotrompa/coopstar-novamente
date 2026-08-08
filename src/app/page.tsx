@@ -20,7 +20,7 @@ const localBusinessSchema = {
   name: site.name,
   description:
     "Moto frete e delivery de documentos e pequenos volumes em São Paulo capital e Grande SP, 24 horas.",
-  image: `${site.url}/imagens/hero-loira6.jpg`,
+  image: `${site.url}/imagens/hero-loira6.png`,
   telephone: `+55-11-5052-3563`,
   email: site.email,
   url: site.url,
