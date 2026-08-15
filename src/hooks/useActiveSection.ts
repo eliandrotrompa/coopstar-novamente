@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-const FIRST_ID_INDEX = 0;
-
 function byIdAsc(a: { offsetTop: number; id: string }, b: { offsetTop: number; id: string }) {
   return a.offsetTop - b.offsetTop;
 }
 
 export function useActiveSection(ids: string[], defaultId?: string) {
-  const [active, setActive] = useState<string>(defaultId ?? ids[FIRST_ID_INDEX]);
+  const [active, setActive] = useState<string>(defaultId ?? ids[0]);
 
   useEffect(() => {
     const sections = ids
@@ -25,7 +23,7 @@ export function useActiveSection(ids: string[], defaultId?: string) {
       const threshold = 140;
       const scrollTop = window.scrollY + threshold;
       const docHeight = document.documentElement.scrollHeight;
-      let current = ids[FIRST_ID_INDEX];
+      let current = ids[0];
       for (const section of sections) {
         if (section.offsetTop <= scrollTop) current = section.id;
       }
@@ -40,8 +38,7 @@ export function useActiveSection(ids: string[], defaultId?: string) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ids.join(",")]);
+  }, [ids]);
 
   return active;
 }

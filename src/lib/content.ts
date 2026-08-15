@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from "lucide-react";
+import { site } from "./site";
 
 export interface NavItem {
   label: string;
@@ -244,20 +245,20 @@ export const aboutHighlights = [
 export const contactChannels = [
   {
     label: "Telefone",
-    value: "(11) 5052-3563 · 5051-4442",
-    href: "tel:+551150523563",
+    value: `${site.phone} · ${site.phoneAlt}`,
+    href: site.phoneHref,
     icon: PhoneCall,
   },
   {
     label: "E-mail",
-    value: "coopstar_express@hotmail.com",
-    href: "mailto:coopstar_express@hotmail.com",
+    value: site.email,
+    href: `mailto:${site.email}`,
     icon: Handshake,
   },
   {
     label: "Endereço",
-    value: "Av. Jurucê, 898 – Moema, São Paulo – SP",
-    href: "https://maps.google.com/?q=Av.+Juruc%C3%AA,+898+-+Moema+-+S%C3%A3o+Paulo+-+SP",
+    value: `${site.address.street} – ${site.address.district}, ${site.address.city} – ${site.address.state}`,
+    href: site.mapsUrl,
     icon: MapPin,
   },
 ];

@@ -71,7 +71,7 @@ export function Diferenciais() {
                     <Quote className="size-6 text-navy-700" aria-hidden />
                   </div>
                   <p className="text-xs leading-relaxed text-slate-300 sm:text-sm italic">
-                    "{testi.content}"
+                    &ldquo;{testi.content}&rdquo;
                   </p>
                 </div>
 

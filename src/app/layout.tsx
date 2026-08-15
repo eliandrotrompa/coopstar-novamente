@@ -46,11 +46,20 @@ export const metadata: Metadata = {
     title: `${site.name} – Entregas e coletas rápidas em São Paulo`,
     description:
       "Moto frete e delivery em São Paulo capital e Grande SP. Atendimento 24 horas com hora marcada.",
+    images: [
+      {
+        url: `${site.url}/imagens/hero-oriental.png`,
+        width: 1024,
+        height: 1024,
+        alt: "Moto frete da Coopstar Express em São Paulo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: "Moto frete e entregas rápidas em São Paulo, 24 horas.",
+    images: [`${site.url}/imagens/hero-oriental.png`],
   },
   alternates: { canonical: "/" },
 };

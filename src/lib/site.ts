@@ -17,6 +17,10 @@ export const site = {
     state: "SP",
     cep: "04080-001",
   },
+  mapsUrl:
+    "https://maps.google.com/?q=Av.+Juruc%C3%AA,+898+-+Moema+-+S%C3%A3o+Paulo+-+SP",
+  mapsEmbedUrl:
+    "https://maps.google.com/maps?q=Av.+Juruc%C3%AA,+898+-+Moema,+S%C3%A3o+Paulo+SP&z=15&output=embed",
   hours: "24 horas, de segunda a segunda-feira",
   yearsInMarket: "Mais de 9 anos de mercado",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",

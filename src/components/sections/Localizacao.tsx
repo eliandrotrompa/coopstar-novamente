@@ -6,8 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { LazyMap } from "./LazyMap";
 
 export function Localizacao() {
-  const mapsUrl =
-    "https://maps.google.com/?q=Av.+Juruc%C3%AA,+898+-+Moema+-+S%C3%A3o+Paulo+-+SP";
+  const mapsUrl = site.mapsUrl;
 
   return (
     <section id="localizacao" className="section-space bg-slate-50/80">

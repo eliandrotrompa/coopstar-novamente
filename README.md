@@ -9,21 +9,20 @@ One-page site refatorado para Next.js 15 + TypeScript + Tailwind CSS v4 + Framer
 - **Estilização:** Tailwind CSS v4 (design tokens com as cores da marca)
 - **Animações:** Framer Motion (scroll reveal, transições de menu e FAQ)
 - **Ícones:** Lucide React
-- **Formulário:** API Route + Nodemailer (SMTP)
+- **Formulário:** Web3Forms (envio direto pelo cliente)
 
 ## Estrutura
 
 ```
 src/
-├── app/               # layout, páginas, API, sitemap, robots, icon
-│   └── api/contato/   # envio do formulário (POST)
+├── app/               # layout, página, sitemap, robots, icon
 ├── components/
 │   ├── layout/        # Header, Footer, Logo, FloatingCall
 │   ├── motion/        # Reveal, Stagger (animações reutilizáveis)
 │   ├── sections/      # Hero, Sobre, Diferenciais, Serviços, Processo, FAQ, Contato, Localização
 │   └── ui/            # Button, Container, SectionHeading
 ├── hooks/             # useActiveSection (scroll spy do menu)
-└── lib/               # site.ts, content.ts, mail.ts
+└── lib/               # site.ts (dados da marca), content.ts (conteúdo das seções)
 ```
 
 ## Rodando localmente
@@ -35,19 +34,13 @@ npm run dev        # http://localhost:3000
 
 ## Variáveis de ambiente
 
-Copie `.env.example` para `.env` e configure o SMTP da hospedagem:
+Copie `.env.example` para `.env` e defina a URL pública do site:
 
 ```
-SMTP_HOST=smtp.coopstarexpress.com.br
-SMTP_PORT=587
-SMTP_USER=contato@coopstarexpress.com.br
-SMTP_PASS=********
-MAIL_TO=contato@coopstarexpress.com.br
-MAIL_TO_ALT=coopstar_express@hotmail.com
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-> Sem `SMTP_HOST` configurado, o endpoint `/api/contato` simula o envio (pensado para desenvolvimento local).
+O formulário de contato envia direto para o Web3Forms. A `access_key` fica no componente `src/components/sections/Contato.tsx`.
 
 ## Qualidade
 
@@ -60,5 +53,5 @@ npm run build       # Build de produção
 ## Notas
 
 - O site antigo (XHTML/jQuery/PHP) foi preservado na pasta `old/`.
-- Imagens originais em `public/imagens/` (hero, sobre e serviços).
+- Imagens otimizadas em `public/imagens/` (hero, sobre, serviços e frota).
 - Deploy sugerido: Vercel (integração nativa com Next.js).

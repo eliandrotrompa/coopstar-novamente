@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
-import { navItems } from "@/lib/content";
+import { navItems, sectionIds } from "@/lib/content";
 import { site } from "@/lib/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/utils/cn";
@@ -13,7 +13,7 @@ import { Logo } from "./Logo";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const active = useActiveSection(navItems.map((item) => item.id));
+  const active = useActiveSection(sectionIds);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);

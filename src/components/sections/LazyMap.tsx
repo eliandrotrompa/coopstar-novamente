@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
+import { site } from "@/lib/site";
 
 interface LazyMapProps {
   title: string;
@@ -22,7 +23,7 @@ export function LazyMap({ title, className }: LazyMapProps) {
       {loaded ? (
         <iframe
           title={title}
-          src="https://maps.google.com/maps?q=Av.+Juruc%C3%AA,+898+-+Moema,+S%C3%A3o+Paulo+SP&z=15&output=embed"
+          src={site.mapsEmbedUrl}
           width="100%"
           height="100%"
           style={{ border: 0 }}

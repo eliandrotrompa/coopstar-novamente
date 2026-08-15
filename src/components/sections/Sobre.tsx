@@ -56,7 +56,7 @@ export function Sobre() {
 
             <div className="lg:col-span-5">
               <Reveal className="relative">
-                <div className="relative overflow-hidden rounded-2xl border border-slate-100 shadow-xl" suppressHydrationWarning>
+                <div className="relative overflow-hidden rounded-2xl border border-slate-100 shadow-xl">
                   <div className="relative aspect-[4/3] w-full sm:aspect-[4/4]">
                     <Image
                       src="/imagens/sobre-nova.jpg"
@@ -67,7 +67,7 @@ export function Sobre() {
                     />
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -left-4 rounded-xl bg-brand-700 px-5 py-3.5 text-white shadow-lg sm:-left-6" suppressHydrationWarning>
+                <div className="absolute -bottom-4 -left-4 rounded-xl bg-brand-700 px-5 py-3.5 text-white shadow-lg sm:-left-6">
                   <p className="text-xl font-extrabold sm:text-2xl">9+ anos</p>
                   <p className="text-xs text-brand-100">de excelência no mercado</p>
                 </div>
